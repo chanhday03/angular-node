@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Potato",
+      "price": 100,
+      "imgURL": "https://i.pinimg.com/564x/9e/6b/61/9e6b6121f5d02061dff44cad2b5abbcb.jpg",
+      "desc": "Potato is a yellow fruit"
+    },
+    {
+      "id": 3,
+      "name": "Carot",
+      "price": 100,
+      "imgURL": "https://i.pinimg.com/564x/06/f7/09/06f709d69a4e6cfd88b396656b30a537.jpg",
+      "desc": "Potato is a yellow fruit"
+    },
+    {
+      "name": "chanhday03",
+      "price": "100",
+      "desc": "aa",
+      "id": 4
+    },
+    {
+      "name": "",
+      "price": 0,
+      "desc": "",
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fruit"
+    },
+    {
+      "id": 2,
+      "name": "Vegetable"
+    }
+  ]
+}

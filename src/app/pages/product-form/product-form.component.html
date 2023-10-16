@@ -1,0 +1,114 @@
+<div id="form-wrap">
+  <div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+      <h1 class="title">{{ mode === 'create' ? 'Add' : 'Update' }} Product</h1>
+      <form
+        id="form-add-project"
+        enctype="multipart/form-data"
+        [formGroup]="productForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="formbold-input-flex">
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Name Product"
+              formControlName="name"
+            />
+            <label for="title" class="formbold-form-label">Name Product </label>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="price"
+              placeholder="Price"
+              formControlName="price"
+            />
+            <label for="time" class="formbold-form-label">
+              Price Product
+            </label>
+          </div>
+        </div>
+        <div class="formbold-input-flex">
+          <div>
+            <!-- <select id="category" name="category" class="select" *ngFor="let category of categories; index as i">
+              <option value="{{category.id}}">{{category.name}}</option>
+            </select> -->
+            <label for="category" class="formbold-form-label"> Category </label>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="price"
+              placeholder="Desc"
+              formControlName="desc"
+            />
+            <label for="repository" class="formbold-form-label"> Desc </label>
+          </div>
+        </div>
+
+        <div class="formbold-input-flex">
+          <div>
+            <input
+              type="text"
+              name="skills"
+              id="skills"
+              placeholder="Skill..."
+              class="formbold-form-input"
+            />
+            <label for="skills" class="formbold-form-label"> Skills </label>
+          </div>
+          <div>
+            <input
+              type="text"
+              name="role"
+              id="role"
+              placeholder="Role in Project..."
+              class="formbold-form-input"
+            />
+            <label for="role" class="formbold-form-label"> Role </label>
+          </div>
+        </div>
+
+        <div class="formbold-textarea">
+          <textarea
+            rows="6"
+            class="form-control"
+            id="desc"
+            placeholder="Desc"
+            formControlName="desc"
+          ></textarea>
+          <label for="description" class="formbold-form-label">
+            Description
+          </label>
+        </div>
+
+        <div class="formbold-input-file">
+          <div class="upload-box">
+            <div class="upload-img">
+              <img src="" alt="" />
+            </div>
+            <label for="upload-image" class="upload-label">
+              <i class="bx bx-image-add"></i>
+              Upload Image
+            </label>
+            <input
+              type="file"
+              id="upload-image"
+              accept="images/*"
+              formControlName="image"
+              (change)="onImageChanged($event)"
+            />
+          </div>
+        </div>
+        <button type="submit" class="formbold-btn">
+          {{ mode === 'create' ? 'Add' : 'Update' }} Product
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div id="table-product">
+    <table>
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>
+            <a routerLink="/admin/categories/add">
+              <button class="btn-add">
+                <i class="bx bx-plus-circle"></i>
+              </button>
+              <span>Add</span>
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories; index as i" scope="row">
+          <td>{{ i + 1 }}</td>
+          <td>{{ category.id }}</td>
+          <td></td>
+          <td>{{ category.name }}</td>
+          <td width="150" class="text-center">
+            <button class="btn-remove" (click)="removeCategory(category.id!)">
+              <i class="bx bx-trash"></i>
+            </button>
+            <button
+              class="btn-edit"
+              routerLink="/admin/categories/{{ category.id }}/edit"
+            >
+              <i class="bx bx-edit"></i>
+            </button>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

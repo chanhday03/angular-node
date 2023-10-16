@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RegistrationForm_v2 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="inner">
+        <form [formGroup]="formSignup" (ngSubmit)="onSubmit()">
+          <h3>Registration Form</h3>
+          <div class="form-group">
+            <div class="form-wrapper">
+              <label for="">First Name</label>
+              <input type="text" class="form-control" formControlName="name" />
+            </div>
+            <div
+              *ngIf="
+        formSignup.get('name')?.hasError('required') &&
+        (formSignup.get('name')?.touched || formSignup.get('name')?.dirty)
+      "
+            >
+              Name is required
+            </div>
+          </div>
+          <div class="form-wrapper">
+            <label for="">Email</label>
+            <input type="text" class="form-control" formControlName="email" />
+          </div>
+          <div
+            *ngIf="
+			formSignup.get('email')?.hasError('required') &&
+			(formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
+		  "
+          >
+            Email is required
+          </div>
+          <div class="form-wrapper">
+            <label for="">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+          <div
+            *ngIf="
+      formSignup.get('password')?.hasError('required') &&
+      (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)
+    "
+          >
+            Password is required
+          </div>
+          <div
+            *ngIf="
+      formSignup.get('password')?.hasError('minlength') &&
+      (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)
+    "
+          >
+            Mật khẩu phải có ít nhất 6 ký tự
+          </div>
+          <div class="form-wrapper">
+            <label for="">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="confirmPassword"
+            />
+          </div>
+          <div
+            *ngIf="
+        formSignup?.hasError('passwordNotMatch') &&
+        (formSignup.get('confirmPassword')?.touched ||
+          formSignup.get('confirmPassword')?.dirty)
+      "
+          >
+            Mật khẩu không trùng
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" /> I caccept the Terms of Use & Privacy
+              Policy.
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <button>Register Now</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
